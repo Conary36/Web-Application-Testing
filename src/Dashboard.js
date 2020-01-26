@@ -32,8 +32,8 @@ const Dashboard = ({strikes, setStrikes, balls, setBalls, at_bat, setAt_bat, fou
     }
 
     const nextFoul = () =>{
-        if (fouls <= 2){
-            setStrikes(strikes + 1)
+        if (balls < 2){
+            setFouls(fouls + 1);
         }else{
             batterUp();
         }
