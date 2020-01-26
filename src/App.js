@@ -20,17 +20,21 @@ const [fouls, setFouls] = useState(0)
     <>
     <section className="scoreboard">
       <div className="topRow">
-        <Display strikes={strikes} balls={balls} at_bat={at_bat} fouls={fouls}/>
+        {/*<Display />*/}
         <div className='timer'><Timer/></div>
       </div>
-      <BottomRow/>
+        <BottomRow strikes={strikes} balls={balls} at_bat={at_bat} fouls={fouls}/>
     </section>
   
       <Dashboard
         strikes={strikes}
+        setStrikes={setStrikes}
         balls={balls}
+        setBalls={setBalls}
         at_bat={at_bat}
+        setAt_bat={setAt_bat}
         fouls={fouls}
+        setFouls={setFouls}
       />
   </>
   

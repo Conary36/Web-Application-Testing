@@ -6,17 +6,20 @@ const Dashboard = ({strikes, setStrikes, balls, setBalls, at_bat, setAt_bat, fou
 
         setStrikes(0);
         setBalls(0);
-        setAt_bat(at_bat + 1);
-        setFouls(fouls + 1);
+        setAt_bat(0);
+        setFouls(0);
         
     }
 
     const nextStrike = () =>{
+        console.log(strikes);
         if(strikes < 2){
+            console.log('fire!');
             setStrikes(strikes + 1);
          }else{
             batterUp();
         }
+        
     }
 
     const nextBall = () => {
@@ -28,8 +31,8 @@ const Dashboard = ({strikes, setStrikes, balls, setBalls, at_bat, setAt_bat, fou
     }
 
     const nextFoul = () =>{
-        if (fouls === 2){
-            setFouls(strikes + 1)
+        if (strikes === 1){
+            setStrikes(strikes + 1)
         }else{
             batterUp();
         }
@@ -39,7 +42,7 @@ const Dashboard = ({strikes, setStrikes, balls, setBalls, at_bat, setAt_bat, fou
     return(
         <section className="buttons">
             <div className="homeButtons">
-                <button onclick={nextStrike}>Strike</button>
+                <button onClick={nextStrike}>Strike</button>
                 <button onClick={nextBall}>Ball</button>
                 <button onClick={nextFoul}>Foul</button>
                 <button onClick={batterUp}>Hit</button>
