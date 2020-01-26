@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import Timer from './Timer'
-import BottomRow from './BottomRow'
 import Display from './Display'
 import Dashboard from './Dashboard'
 import './App.css';
@@ -10,7 +9,7 @@ function App() {
 
 const [strikes, setStrikes] = useState(0);
 const [balls, setBalls] = useState(0);
-const [at_bat, setAt_bat] = useState(1);
+const [at_bat, setAt_bat] = useState(0);
 const [fouls, setFouls] = useState(0)
 
   
@@ -20,10 +19,9 @@ const [fouls, setFouls] = useState(0)
     <>
     <section className="scoreboard">
       <div className="topRow">
-        {/*<Display />*/}
         <div className='timer'><Timer/></div>
       </div>
-        <BottomRow strikes={strikes} balls={balls} at_bat={at_bat} fouls={fouls}/>
+        <Display strikes={strikes} balls={balls} at_bat={at_bat} fouls={fouls}/>
     </section>
   
       <Dashboard

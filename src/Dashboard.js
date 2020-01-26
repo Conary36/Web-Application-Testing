@@ -6,18 +6,19 @@ const Dashboard = ({strikes, setStrikes, balls, setBalls, at_bat, setAt_bat, fou
 
         setStrikes(0);
         setBalls(0);
-        setAt_bat(0);
+        setAt_bat(1);
         setFouls(0);
         
     }
 
     const nextStrike = () =>{
         console.log(strikes);
-        if(strikes < 2){
+        if(strikes < 3){
             console.log('fire!');
             setStrikes(strikes + 1);
          }else{
             batterUp();
+            setAt_bat(at_bat + 1);
         }
         
     }
@@ -31,7 +32,7 @@ const Dashboard = ({strikes, setStrikes, balls, setBalls, at_bat, setAt_bat, fou
     }
 
     const nextFoul = () =>{
-        if (strikes === 1){
+        if (fouls <= 2){
             setStrikes(strikes + 1)
         }else{
             batterUp();
